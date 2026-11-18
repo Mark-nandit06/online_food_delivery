@@ -1,0 +1,26 @@
+ipeline {
+    agent any
+    tools {
+        maven 'MAVEN_HOME'
+    }
+    stages {
+        stage('Git Clone') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/neenapuppala/neena-prep2.4.git'
+            }
+        }
+        stage('Clean') {
+            steps { bat 'mvn clean' }
+        }
+        stage('Install') {
+            steps { bat 'mvn install' }
+        }
+        stage('Test') {
+            steps { bat 'mvn test' }
+        }
+        stage('Package') {
+            steps { bat 'mvn package' }
+        }
+    }
+}
