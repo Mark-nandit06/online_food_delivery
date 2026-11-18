@@ -1,4 +1,4 @@
-ipeline {
+pipeline {
     agent any
     tools {
         maven 'MAVEN_HOME'
@@ -7,7 +7,7 @@ ipeline {
         stage('Git Clone') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/neenapuppala/neena-prep2.4.git'
+                    url: 'https://github.com/Mark-nandit06/online_food_delivery.git'
             }
         }
         stage('Clean') {
